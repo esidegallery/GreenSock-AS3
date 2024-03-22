@@ -1633,7 +1633,7 @@ TweenMax.killAll(false, false, true, false);
 				tween:Animation, i:int;
 			for (i = 0; i < l; i++) {
 				tween = a[i];
-				if (allTrue || (tween is SimpleTimeline) || ((isDC = (TweenLite(tween).target == TweenLite(tween).vars.onComplete)) && delayedCalls) || (tweens && !isDC)) {
+				if (allTrue || (tween is SimpleTimeline) || (Boolean(isDC = (TweenLite(tween).target == TweenLite(tween).vars.onComplete)) && delayedCalls) || (tweens && !isDC)) {
 					if (complete) {
 						tween.totalTime(tween._reversed ? 0 : tween.totalDuration());     
 					} else {
@@ -2042,4 +2042,3 @@ myAnimation.yoyo( true ); //sets yoyo to true
 		
 	}
 }
-
